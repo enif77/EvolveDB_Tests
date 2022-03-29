@@ -1,0 +1,1 @@
+sqlserver -c "Server=127.0.0.1,1433;Database=TestDB2;User Id=sa;Password=Passw0rd;" -l "sql"
