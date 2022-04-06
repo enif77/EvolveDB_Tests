@@ -10,10 +10,11 @@ This repo shows some ideas, how to use the evolve-db tool for managing changes i
 
 ## Howtos
 
-The `create-db` script is set up for MSSQL 2019 running on linux. I am using Ubuntu Server 20.04.
+The `create-db` scripts are set up for MSSQL 2019.
 
-To create a new DB, use the `args-master.txt`. It cereates the `TestDB2` database. It modifies the `master` database,
-so it creates migration table in it, showing that changes on the database server level can be then tracked too.
+To create a new DB, create a corresponding SQL script in the `sql-master` directory and use the `args-master.txt`.
+It cereates databases. It modifies the `master` database, so it creates migration table in it, showing that changes
+on the database server level can be then tracked too.
 
 If you do not want to use database changes tracking in the `master` database, execute script(s) from the `sql-master`
 directory manually.
@@ -25,9 +26,16 @@ Start with creating a new DB:
 ./evolve.exe migrate @args-master.txt
 ```
 
-The TestDB2 database migrations are done by:
+The TestDB database migrations are done by:
 
 ```
-./evolve.exe info @args-TestDB2.txt
-./evolve.exe migrate @args-TestDB2.txt
+./evolve.exe info @args-TestDB.txt
+./evolve.exe migrate @args-TestDB.txt
+```
+
+The Monitor database migrations are done by:
+
+```
+./evolve.exe info @args-Monitor.txt
+./evolve.exe migrate @args-Monitor.txt
 ```

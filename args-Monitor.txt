@@ -1,0 +1,1 @@
+sqlserver -c "Server=127.0.0.1,1433;Database=Monitor;User Id=sa;Password=Passw0rd;" -l "sql-Monitor" -p database-name:Monitor
